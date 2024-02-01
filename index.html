@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon-2.svg" sizes="96x96">
+
+    <!-- Tailwind Einbindung -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Adobe fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/wqq5fim.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'moret': ['"moret"', 'serif'],
+                        'geist': ['"geist-sans"', 'sans-serif'],
+                    },
+
+                    fontSize: {
+                        '11xl': '11rem',
+                        '12xl': '12rem',
+                        '9xl': '9rem',
+                        '17xl': '17rem',
+                        '14xl': '14rem',
+                        '16px': ['1rem', {
+                            fontWeight: '600',
+                        }],
+                        '14px': ['0.875rem', {
+                            fontWeight: '600',
+                        }],
+                    },
+
+                    lineHeight: {
+                        '7l': '7rem',
+                        '9l': '9rem',
+                        '12': '12rem',
+                        '17': '17rem',
+                    },
+
+                },
+            },
+        };
+
+    </script>
+
+</head>
+
+<body>
+
+    <header x-data="{open:false}" class="header"
+        style="background-color: #11182700; z-index: 100;position: relative;width: 100%;">
+        <div class="nav-head flex justify-between items-center mx-auto max-w-7xl px-6 lg:px-8 pb-16 pt-14">
+            <div class="logo">
+                <img src="img/logo-bl.svg" alt="Logo" style="width:140px; height: auto;">
+            </div>
+            <div class="button-icon flex items-center gap-x-8 justify-center">
+                <a href="mailto:michellesommer01@web.de"
+                    class="rounded-full px-4 py-1.5 text-sm font-geist font-semibold bg-gray-900 text-neutral-50">
+                    Let's talk
+                </a>
+                <button @click="open = 'nav-head'" type="button" class="toggle-button fa fa-bars"
+                    onclick="changeIcon(this)">
+                    <img src="img/hamburger-bl_1.png" alt="Icon" style="width:24px; height: auto;">
+                </button>
+                <script src="/script.js"></script>
+            </div>
+        </div>
+        <nav x-show="open == 'nav-head'" x-transition:enter="duration-500 ease-out"
+            x-transition:enter-start="opacity-0 -translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="duration-300 ease-in" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-1" @click.outside="open = false">
+            <div class="nav px-6 lg:px-8" style="color:rgb(73, 73, 73); border-top: 1px solid;">
+                <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
+                    <a href="#projekte"
+                        class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
+                        <p class="nav-text">Projekte</p>
+                    </a>
+                    <a href="#about"
+                        class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
+                        <p class="nav-text">Über mich</p>
+                    </a>
+                </div>
+            </div>
+            <div class="nav px-6 lg:px-8"
+                style="color:rgb(73, 73, 73); border-top: 1px solid; border-bottom: 1px solid; ">
+                <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
+                    <a href="#bildung"
+                        class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
+                        <p class="nav-text-color">Bildungsweg</p>
+                    </a>
+                    <a href="#skills"
+                        class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
+                        <p class="nav-text-color">Skills</p>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-footer px-6 lg:px-8" style="color:rgb(73, 73, 73); border-bottom: 1px solid; ">
+                <div class="grid grid-cols-1 gap-y-10 mx-auto max-w-7xl pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
+                    <div class="contact-info">
+                        <h2 class="font-display text-lg font-semibold font-geist text-gray-900">Kontakt</h2>
+                        <ul role="list" class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                            <li>
+                                <adress class="text-md font-geist text-gray-900">
+                                    <strong class="text-gray-900">Stade</strong>
+                                    <br>
+                                    <a href="mailto:michellesommer01@web.de"
+                                        class="hover:text-indigo-500">michellesommer01@web.de</a>
+                                    <br>
+                                    <a href="tel:+49 151 68435762" class="hover:text-indigo-500">+49 151 68435762</a>
+                                </adress>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-media">
+                        <h2 class="font-display text-base font-semibold font-geist text-gray-900 px-16">Social media
+                        </h2>
+                        <ul role="list" class="flex px-16 gap-x-10 text-white mt-6">
+                            <li>
+                                <a href="https://www.linkedin.com/in/michelle-sommer-a349651a9/">
+                                    <img src="img/linkedin-icon.svg" alt="LinkedIn Icon"
+                                        style="width:24px; height: 24px;">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/">
+                                    <img src="img/x-button.svg" alt="Instagram Icon" style="width:24px; height: 24px;">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <!-- Main -->
+
+    <main>
+        <div class="hero relative isolate px-6 pt-14 pb-20 md:pt-4 lg:px-8" id="hero">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <!-- Social Media 
+            <div class="hs-social left wow fadeInUp no-animate" data-wow-offset="0" style="visibility: visible;">
+                <a href="#" class="hs-social-link">
+                    <span class="visually-hidden">LinkedIn</span>
+                    <i class="fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+            -->
+            <!-- End Social Media -->
+            <!-- Scroll Down -->
+
+            <div class="local-scroll scroll-down-wrap-2 wow fadeInUp no-animate" data-wow-offset="0"
+                style="visibility: visible;">
+                <div class="full-wrapper text-end">
+                    <a href="#about" class="scroll-down-2">
+                        <img src="img/arrow-down.svg" alt="Scroll Down">
+                    </a>
+                </div>
+            </div>
+
+            <!-- End Scroll Down -->
+            <div class="relative z-50 mx-auto max-w-4xl py-32 sm:py-14 lg:pt-0 lg:pb-32">
+                <div class="text-center">
+                    <h1
+                        class="text-8xl font-moret tracking-tight leading-7l text-gray-900 sm:text-9xl sm:leading-9l md:text-12xl md:leading-12 2xl:text-17xl 2xl:leading-17">
+                        Graphic
+                        Designer</h1>
+                    <hr class="parting-line my-8">
+                    <p class="beschreibung mt-6 text-xl sm:text-4xl font-moret leading-8 text-gray-800">Spezialisiert in
+                        Webdesign, Webentwicklung, Print</p>
+                    <div class="mt-10 flex flex-col gap-4 sm:block items-center justify-center gap-x-6">
+                        <a href="#projekte" class="w-full sm:w-auto sm:pr-4">
+                            <button type="button" class="w-full sm:w-auto rounded-full bg-white px-6 py-3 text-16px font-geist 
+                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Projekte</button>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto sm:pr-4">
+                            <button type="button" class="w-full sm:w-auto rounded-full bg-white px-6 py-3 text-16px font-geist 
+                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Über
+                                mich</button>
+                        </a>
+                        <a href="#skills" class="w-full sm:w-auto">
+                            <button type="button" class="w-full sm:w-auto rounded-full bg-white px-6 py-3 text-16px font-geist 
+                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Skills</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Infinite Scrolling Text Animation -->
+
+        <div class="infinite-animation mt-32">
+            <div class="scroll text1">
+                <div>
+                    <p class="font-moret">
+                        Projekte<span>Projekte</span>Projekte<span>Projekte</span>Projekte<span>Projekte</span>Projekte<span>Projekte</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Arbeiten vorstellen -->
+        <div class="bg-white">
+            <div class="relative isolate px-6 -mt-32 lg:px-8">
+
+                <div id="projekte" class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:pt-4 sm:pb-60 lg:max-w-7xl lg:px-8">
+                    <div class="mx-auto max-w-3xl text-center">
+                        <!--
+                    <h2 class="text-3xl font-moret tracking-tight text-gray-900 sm:text-4xl">WORK</h2>
+                -->
+                        <!--
+                    <p class="mt-4 text-gray-500">As a digital creative, your laptop or tablet is at the center of your
+                        work. Keep your device safe with a fabric sleeve that matches in quality and looks.</p>
+                        -->
+                    </div>
+
+                    <div class="mt-16 space-y-16">
+                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-8">
+                            <div
+                                class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
+                                <h3 class="text-4xl font-moret text-gray-900">Digital | Website</h3>
+                                <p class="mt-2 text-sm font-geist text-gray-500">Eine Website für ein fiktives und
+                                    modernes Sushirestaurant, wobei die vielfältige Auswahl an Produkten präsentiert
+                                    wird.
+                                </p>
+                                <div class="button-wrapper items-start justify-start mt-6 flex">
+                                    <a href="" class="">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Figma</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">CSS</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">HTML</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
+                                <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                    <img src="img/sushi-mockup-2.png"
+                                        alt="Detail of zipper pull with tan leather and silver rivet."
+                                        class="object-cover object-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col-reverse text-right lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-8">
+                            <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
+                                <h3 class="text-4xl font-moret text-gray-900">Digital | Onlineshop</h3>
+                                <p class="mt-2 text-sm font-geist text-gray-500">In Figma umgesetztes UI Design für
+                                    einen Brautmode Onlineshop.
+                                </p>
+                                <div class="button-wrapper items-end justify-end mt-6 flex">
+                                    <a href="" class="">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                    text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Figma</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                    text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Shopify</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div
+                                class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
+                                <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                    <img src="img/vk-mockup.png"
+                                        alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull."
+                                        class="object-cover object-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(90%-100rem)]"
+                            aria-hidden="true">
+                            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                            </div>
+                        </div>
+                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-8">
+                            <div
+                                class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
+                                <h3 class="text-4xl font-moret text-gray-900">Print | Magazin</h3>
+                                <p class="mt-2 text-sm font-geist text-gray-500">Aufgabe war es hier, ein Boardmagazin
+                                    eines fiktiven Kunden mit vorgegebenen Inhalt in InDesign umzusetzen.
+                                </p>
+                                <div class="button-wrapper items-start justify-start mt-6 flex">
+                                    <a href="" class="">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">InDesign</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Photoshop</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
+                                <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                    <img src="img/boardmagazin-4.png"
+                                        alt="Detail of zipper pull with tan leather and silver rivet."
+                                        class="object-cover object-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col-reverse text-right lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-8">
+                            <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
+                                <h3 class="text-4xl font-moret text-gray-900">Print | Broschüre</h3>
+                                <p class="mt-2 text-sm font-geist text-gray-500">Zur Weihnachtszeit sollte ein Flyer mit
+                                    allen wichtigen Terminen und Aktionen für das Alte Land gestaltet werden.
+                                </p>
+                                <div class="button-wrapper items-end justify-end mt-6 flex">
+                                    <a href="" class="">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">InDesign</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Illustrator</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div
+                                class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
+                                <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                    <img src="img/winterzauber-mockup-flyerpsd.png"
+                                        alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull."
+                                        class="object-cover object-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-end lg:gap-x-8">
+                            <div
+                                class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
+                                <h3 class="text-4xl font-moret text-gray-900">Print | Einladungskarten</h3>
+                                <p class="mt-2 text-sm font-geist text-gray-500">Entwürfe mehrerer Einladungskarten für
+                                    eine Weihnachtsfeier.
+                                </p>
+                                <div class="button-wrapper items-start justify-start mt-6 flex">
+                                    <a href="" class="">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Illustrator</button>
+                                    </a>
+                                    <a href="" class="ml-3">
+                                        <button type="button"
+                                            class="rounded-full px-5 py-2 text-14px font-geist 
+                                        text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">InDesign</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
+                                <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                    <img src="img/postkarten.png"
+                                        alt="Detail of zipper pull with tan leather and silver rivet."
+                                        class="object-cover object-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                    aria-hidden="true">
+                    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Infinite Scrolling Text Animation -->
+
+        <div class="infinite-animation md:mt-12">
+            <div class="scroll text1">
+                <div>
+                    <p class="font-moret">
+                        Über mich<span>Über mich</span>Über mich<span>Über mich</span>Über mich<span>Über
+                            mich</span>Über mich<span>Über mich</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About me-->
+        <!-- Round Edge -->
+
+        <section class="rounded-edge md:-mt-8">
+            <div class="content" id="about" style="width:80rem;">
+                <div
+                    class="mx-auto max-w-7xl px-6 py-24 gap-8 sm:pt-16 sm:pb-0 md:pt-4 lg:flex lg:items-start lg:justify-between lg:px-8">
+                    <h2 class="text-4xl pb-4 font-moret tracking-tight text-neutral-50 lg:pb-0 sm:text-8xl">Wer bin ich?
+                    </h2>
+                    <div class="about-text-wrapper max-w-xl">
+                        <p class="font-geist text-base text-neutral-50 mb-6">
+                            Hi, ich bin Michelle – frisch gebackene Meidengestalterin für Digital & Print.
+                            Das ist auf keinen Fall ein Minuspunkt, im Gegenteil - ich möchte mein Know-how ausbauen und
+                            meine Kreativität auf das nächste Level bringen, um innovative Designs zu erschaffen und
+                            eure Projekte zum Strahlen zu bringen!
+                        </p>
+                        <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
+                            <a href="mailto:michellesommer01@web.de" class="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 
+                                focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                Let's talk
+                            </a>
+                            <!--
+                            <a href="#" class="text-sm font-semibold leading-6 text-neutral-50">Learn more <span
+                                    aria-hidden="true">→</span></a>
+                            -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- End Round Edge -->
+
+
+
+        <!-- Education -->
+        <div class="relative isolate overflow-hidden bg-gray-900">
+            <div class="px-6 py-24 sm:px-6 sm:pt-8 sm:pb-32 lg:px-8">
+
+                <div id="bildung"
+                    class="mx-auto max-w-7xl px-6 py-24 sm:py-2 -mt-200px lg:flex lg:items-center lg:justify-between lg:px-8"
+                    style="margin-top:-50px;">
+                    <ul role="list" class="divide-y divide-gray-100 w-full">
+                        <li class="grid md:flex md:justify-between md:items-center gap-x-6 py-8">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-2xl font-moret leading-6 text-neutral-50">Modevo GmbH</p>
+                                    <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-indigo-500">
+                                        Okt. 2023 - vrsl. Jul. 2024 </p>
+                                </div>
+                            </div>
+                            <div class="education">
+                                <p class="text-2xl leading-6 font-moret text-neutral-50">Ausbildung - Mediengestalterin
+                                    Digital & Print</p>
+
+                            </div>
+                        </li>
+                        <li class="grid md:flex md:justify-between md:items-center gap-x-6 py-8">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-2xl font-moret leading-6 text-neutral-50">we-site GmbH</p>
+                                    <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-indigo-500">
+                                        Aug. 2022 - Sep. 2023</p>
+                                </div>
+                            </div>
+                            <div class="education sm:flex sm:flex-col lg:items-end">
+                                <p class="text-2xl leading-6 font-moret text-neutral-50">Ausbildung - Mediengestalterin
+                                    Digital & Print</p>
+                                <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-gray-500">Betrieb
+                                    gewechselt</p>
+
+                            </div>
+                        </li>
+                        <li class="grid md:flex md:justify-between md:items-center gap-x-6 py-8">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-2xl font-moret leading-6 text-neutral-50">Kühne + Nagel (AG & Co.) KG
+                                    </p>
+                                    <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-indigo-500">
+                                        Aug. 2021 - Dez. 2021</p>
+                                </div>
+                            </div>
+                            <div class="education sm:flex sm:flex-col lg:items-end">
+                                <p class="text-2xl leading-7 font-moret text-neutral-50">Ausbildung - Kauffrau
+                                    für Spedition-/<br>& Logistikdienstleistungen</p>
+                                <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-gray-500">
+                                    vorzeitig beendet, wegen beruflicher Umorientierung</p>
+                            </div>
+                        </li>
+                        <li class="grid md:flex md:justify-between md:items-center gap-x-6 py-8">
+                            <div class="flex min-w-0 gap-x-4">
+                                <div class="min-w-0 flex-auto">
+                                    <p class="text-2xl font-moret leading-6 text-neutral-50">Jobelmann-Schule BBS Stade
+                                    </p>
+                                    <p class="mt-1 truncate font-geist font-medium text-sm leading-5 text-indigo-500">
+                                        Aug. 2019 - Jul. 2021</p>
+                                </div>
+                            </div>
+                            <div class="education">
+                                <p class="text-2xl leading-6 font-moret text-neutral-50">Fachhochschulreife Fachrichtung
+                                    Gestaltung</p>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <svg viewBox="0 0 1024 1024"
+                class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+                aria-hidden="true">
+                <circle cx="512" cy="512" r="512" fill="url(#8d958450-c69f-4251-94bc-4e091a323369)"
+                    fill-opacity="0.7" />
+                <defs>
+                    <radialGradient id="8d958450-c69f-4251-94bc-4e091a323369">
+                        <stop stop-color="#7775D6" />
+                        <stop offset="1" stop-color="#E935C1" />
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+
+        <!-- Skills -->
+
+        <!-- Infinite Scrolling Text Animation -->
+
+        <div class="infinite-animation mt-40 md:mt-56">
+            <div class="scroll text1">
+                <div>
+                    <p class="font-moret">
+                        Skills<span>Skills</span>Skills<span>Skills</span>Skills<span>Skills</span>Skills<span>Skills</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="skills" class="relative mx-auto max-w-7xl md:mb-56">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 my-8 mx-8  md:grid-cols-5">
+                <!-- Kasten 1-->
+                <div class="column column-2 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/illustrator.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 2 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper md:table-cell">
+                </div>
+                <!-- Kasten 3 -->
+                <div class="column column-4 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/photoshop.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 4 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper md:table-cell ">
+                </div>
+                <!-- Kasten 5 -->
+                <div class="column column-6 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/indesign.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 6 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper  md:table-cell">
+                </div>
+                <!-- Kasten 7 -->
+                <div class="column column-8 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/after-effects.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 8 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper  md:table-cell">
+                </div>
+                <!-- Kasten 9 -->
+                <div class="column column-10 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/figma.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 10 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper  md:table-cell">
+                </div>
+                <!-- Kasten 11 -->
+                <div class="column column-12 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/css.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 12 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper  md:table-cell">
+                </div>
+                <!-- Kasten 13 -->
+                <div class="column column-14 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/html.svg" style="width:80px; height:80px;">
+                </div>
+                <!-- Kasten 14 -->
+                <div class="hidden grid__item flex justify-center items-center px-8 py-8 img-wrapper  md:table-cell">
+                </div>
+                <!-- Kasten 15 -->
+                <div class="column column-16 grid__item flex justify-center items-center px-8 py-8 img-wrapper">
+                    <img src="img/shopify.svg" style="width:80px; height:80px;">
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="relative" aria-labelledby="footer-heading">
+        <div class="mx-auto max-w-7xl px-6 pb-12 pt-20 sm:pt-24 lg:px-8 lg:pt-24 lg:pb-20">
+            <div class="contact-info flex flex-col gap-8 justify-center items-center">
+                <h2 class="text-8xl text-gray-900 font-moret text-center sm:text-9xl">Let's talk</h2>
+                <a href="mailto:michellesommer01@web.de" class="">
+                    <button type="button" class="rounded-full px-5 py-2 text-16px font-geist 
+                text-indigo-500 shadow-sm ring-1 ring-inset ring-indigo-500 hover:bg-gray-50">Hier klicken</button>
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(90%-64rem)]"
+            aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+        </div>
+        <div class="subfooter mt-16 text-center py-24 sm:mt-20 lg:mt-24 bg-gray-900">
+            <div class="inner-subfooter flex flex-col items-center mx-auto max-w-7xl">
+                <div class="contact flex justify-center items-center gap-14 pb-12">
+                    <!-- Scroll Down -->
+
+                    <div class="local-scroll scroll-down-wrap-3 wow fadeInUp no-animate" data-wow-offset="0"
+                        style="visibility: visible;">
+                        <div class="full-wrapper text-end">
+                            <a href="#hero" class="scroll-down-3">
+                                <img src="img/arrow-down-white.svg" alt="Scroll Down">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- End Scroll Down -->
+                    <div
+                        class="contact-single-column text-sm font-geist text-neutral-50 flex justify-center items-center">
+                        <!--
+                        <a class="border border-neutral-50 rounded-2xl p-3" href="">
+                            <img src="img/adress-wh.svg" alt="Standort Icon" class="w-5 h-7" sytel="color:#fff;">
+                        </a>
+                        -->
+                        <a class="font-moret text-2xl" href="mailto:michellesommer01@web.de">
+                            <p>MAIL</p>
+                        </a>
+                    </div>
+                    <div
+                        class="contact-single-column text-sm font-geist text-neutral-50 flex justify-center items-center">
+                        <!--
+                        <a class="border border-neutral-50 rounded-2xl p-3" href="tel:+4915168435762">
+                            <img src="img/phone-wh.svg" alt="Telefon Icon" class="w-5 h-7">
+                        </a>
+                        -->
+                        <a class="font-moret text-2xl" href="tel:+4915168435762">
+                            <p>MOBIL</p>
+                        </a>
+                    </div>
+                    <div
+                        class="contact-single-column text-sm font-geist text-neutral-50 flex justify-center items-center">
+                        <!--
+                        <a class="border border-neutral-50 rounded-2xl p-3" href="mailto:michellesommer01@web.de">
+                            <img src="img/mail-wh.svg" alt="E-Mail Icon" class="w-5 h-7">
+                        </a>
+                        -->
+                        <a class="font-moret text-2xl" href="https://www.linkedin.com/in/michelle-sommer-a349651a9/">
+                            <p>LINKEDIN</p>
+                        </a>
+                    </div>
+                </div>
+                <hr class="parting-line my-4 w-11/12 2xl:w-full">
+                <div class="border-neutral-50 pt-12">
+                    <div class="powered flex justify-center items-center gap-4 pb-4">
+                        <p class="font-moret text-1xl text-neutral-50">Powered by</p>
+                        <img src="img/logo-white.svg" alt="Logo" style="width:80px; height:auto;">
+                    </div>
+                    <p class="text-xs leading-5 font-geist text-neutral-50">&copy; 2024 Michelle Sommer, Inc. All rights
+                        reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
