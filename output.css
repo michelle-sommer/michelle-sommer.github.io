@@ -802,10 +802,6 @@ video {
   justify-content: space-between;
 }
 
-.gap-14 {
-  gap: 3.5rem;
-}
-
 .gap-4 {
   gap: 1rem;
 }
@@ -1002,11 +998,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1022,6 +1013,14 @@ video {
 
 .pb-20 {
   padding-bottom: 5rem;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
 }
 
 .pb-4 {
@@ -1044,8 +1043,16 @@ video {
   padding-top: 3.5rem;
 }
 
+.pt-16 {
+  padding-top: 4rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
 }
 
 .text-center {
@@ -1249,6 +1256,42 @@ video {
           mask-image: radial-gradient(closest-side,white,transparent);
 }
 
+@font-face {
+  font-family: "moret";
+
+  src: local("Moret"),
+      url("/fonts/Moret-Regular.otf");
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "geist";
+
+  src: local("geist"),
+      url("/fonts/Geist-Regular.otf");
+
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "geist";
+
+  src: local("geist"),
+      url("/fonts/Geist-SemiBold.otf");
+
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "geist";
+
+  src: local("geist"),
+      url("/fonts/Geist-Bold.otf");
+
+  font-weight: 700;
+}
+
 .nav-icons{
   width:30px;
   height: auto;
@@ -1447,7 +1490,7 @@ video {
 
 .scroll-down-wrap-2 {
   position: absolute;
-  bottom: -40px;
+  bottom: -80px;
   left: -30px;
   width: 100%;
   line-height: 0;
@@ -1681,6 +1724,11 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-indigo-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(129 140 248 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-indigo-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
@@ -1776,6 +1824,10 @@ video {
     align-items: flex-end;
   }
 
+  .sm\:gap-14 {
+    gap: 3.5rem;
+  }
+
   .sm\:border-0 {
     border-width: 0px;
   }
@@ -1804,6 +1856,11 @@ video {
     padding-bottom: 0.5rem;
   }
 
+  .sm\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   .sm\:pb-0 {
     padding-bottom: 0px;
   }
@@ -1830,6 +1887,10 @@ video {
 
   .sm\:pr-4 {
     padding-right: 1rem;
+  }
+
+  .sm\:pt-0 {
+    padding-top: 0px;
   }
 
   .sm\:pt-16 {
