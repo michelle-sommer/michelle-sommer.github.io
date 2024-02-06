@@ -27,93 +27,93 @@
 <body>
 
     <header x-data="{open:false}" class="header"
-        style="background-color: #11182700; z-index: 100;position: relative;width: 100%;">
-        <div class="nav-head flex justify-between items-center mx-auto max-w-7xl px-6 lg:px-8 pb-16 pt-14">
-            <div class="logo">
-                <a href="/index.html">
+    style="background-color: #11182700; z-index: 100;position: relative;width: 100%;">
+    <div class="nav-head flex justify-between items-center mx-auto max-w-7xl px-6 lg:px-8 pb-16 pt-14">
+        <div class="logo">
+            <a href="/index.html">
                 <img src="img/logo-bl.svg" alt="Logo" style="width:140px; height: auto;">
+            </a>
+        </div>
+        <div class="button-icon flex items-center gap-x-8 justify-center">
+            <a href="mailto:michellesommer01@web.de"
+                class="rounded-full px-4 py-1.5 text-sm font-geist font-semibold bg-gray-900 text-neutral-50">
+                Let's talk
+            </a>
+            <button @click="open = 'nav-head'" type="button" class="toggle-button fa fa-bars"
+                onclick="changeIcon(this)">
+                <img src="img/hamburger-bl_1.png" alt="Icon" style="width:24px; height: auto;">
+            </button>
+            <script src="/script.js"></script>
+        </div>
+    </div>
+    <nav x-show="open == 'nav-head'" x-transition:enter="duration-500 ease-out"
+        x-transition:enter-start="opacity-0 -translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="duration-300 ease-in" x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-1" @click.outside="open = false">
+        <div class="nav px-6 lg:px-8" style="color:rgb(73, 73, 73); border-top: 1px solid;">
+            <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
+                <a href="#projekte"
+                    class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
+                    <p class="nav-text">Projekte</p>
                 </a>
-            </div>
-            <div class="button-icon flex items-center gap-x-8 justify-center">
-                <a href="mailto:michellesommer01@web.de"
-                    class="rounded-full px-4 py-1.5 text-sm font-geist font-semibold bg-gray-900 text-neutral-50">
-                    Let's talk
+                <a href="#about"
+                    class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
+                    <p class="nav-text">Über mich</p>
                 </a>
-                <button @click="open = 'nav-head'" type="button" class="toggle-button fa fa-bars"
-                    onclick="changeIcon(this)">
-                    <img src="img/hamburger-bl_1.png" alt="Icon" style="width:24px; height: auto;">
-                </button>
-                <script src="/script.js"></script>
             </div>
         </div>
-        <nav x-show="open == 'nav-head'" x-transition:enter="duration-500 ease-out"
-            x-transition:enter-start="opacity-0 -translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
-            x-transition:leave="duration-300 ease-in" x-transition:leave-start="opacity-100 translate-y-0"
-            x-transition:leave-end="opacity-0 -translate-y-1" @click.outside="open = false">
-            <div class="nav px-6 lg:px-8" style="color:rgb(73, 73, 73); border-top: 1px solid;">
-                <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
-                    <a href="#projekte"
-                        class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
-                        <p class="nav-text">Projekte</p>
-                    </a>
-                    <a href="#about"
-                        class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
-                        <p class="nav-text">Über mich</p>
-                    </a>
+        <div class="nav px-6 lg:px-8"
+            style="color:rgb(73, 73, 73); border-top: 1px solid; border-bottom: 1px solid; ">
+            <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
+                <a href="#bildung"
+                    class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
+                    <p class="nav-text-color">Bildungsweg</p>
+                </a>
+                <a href="#skills"
+                    class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
+                    <p class="nav-text-color">Skills</p>
+                </a>
+            </div>
+        </div>
+        <div class="nav-footer px-6 lg:px-8" style="color:rgb(73, 73, 73); border-bottom: 1px solid; ">
+            <div class="grid grid-cols-1 gap-y-10 mx-auto max-w-7xl pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
+                <div class="contact-info">
+                    <h2 class="font-display text-lg font-semibold font-geist text-gray-900">Kontakt</h2>
+                    <ul role="list" class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                        <li>
+                            <adress class="text-md font-geist text-gray-900">
+                                <strong class="text-gray-900">Stade</strong>
+                                <br>
+                                <a href="mailto:michellesommer01@web.de"
+                                    class="hover:text-indigo-500">michellesommer01@web.de</a>
+                                <br>
+                                <a href="tel:+49 151 68435762" class="hover:text-indigo-500">+49 151 68435762</a>
+                            </adress>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social-media">
+                    <h2 class="font-display text-base font-semibold font-geist text-gray-900 sm:px-16">Social media
+                    </h2>
+                    <ul role="list" class="flex sm:px-16 gap-x-10 text-white mt-6">
+                        <li>
+                            <a href="https://www.linkedin.com/in/michelle-sommer-a349651a9/" target=”_blank”>
+                                <img src="img/linkedin-icon.svg" alt="LinkedIn Icon"
+                                    style="width:24px; height: 24px;">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/">
+                                <img src="img/x-button.svg" alt="Instagram Icon" style="width:24px; height: 24px;">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="nav px-6 lg:px-8"
-                style="color:rgb(73, 73, 73); border-top: 1px solid; border-bottom: 1px solid; ">
-                <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-7xl">
-                    <a href="#bildung"
-                        class="relative px-16 pl-0 py-16 text-gray-900 text-5xl font-moret sm:border-r sm:border-gray-900 hover:text-indigo-500 hover:pl-8">
-                        <p class="nav-text-color">Bildungsweg</p>
-                    </a>
-                    <a href="#skills"
-                        class="relative px-16 pl-0 sm:pr-0 sm:pl-16 py-16 text-gray-900 text-5xl font-moret border-t border-gray-900 sm:border-0 hover:text-indigo-500 hover:pl-24">
-                        <p class="nav-text-color">Skills</p>
-                    </a>
-                </div>
-            </div>
-            <div class="nav-footer px-6 lg:px-8" style="color:rgb(73, 73, 73); border-bottom: 1px solid; ">
-                <div class="grid grid-cols-1 gap-y-10 mx-auto max-w-7xl pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
-                    <div class="contact-info">
-                        <h2 class="font-display text-lg font-semibold font-geist text-gray-900">Kontakt</h2>
-                        <ul role="list" class="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                            <li>
-                                <adress class="text-md font-geist text-gray-900">
-                                    <strong class="text-gray-900">Stade</strong>
-                                    <br>
-                                    <a href="mailto:michellesommer01@web.de"
-                                        class="hover:text-indigo-500">michellesommer01@web.de</a>
-                                    <br>
-                                    <a href="tel:+49 151 68435762" class="hover:text-indigo-500">+49 151 68435762</a>
-                                </adress>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="social-media">
-                        <h2 class="font-display text-base font-semibold font-geist text-gray-900 px-16">Social media
-                        </h2>
-                        <ul role="list" class="flex px-16 gap-x-10 text-white mt-6">
-                            <li>
-                                <a href="https://www.linkedin.com/in/michelle-sommer-a349651a9/" target=”_blank”>
-                                    <img src="img/linkedin-icon.svg" alt="LinkedIn Icon"
-                                        style="width:24px; height: 24px;">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/">
-                                    <img src="img/x-button.svg" alt="Instagram Icon" style="width:24px; height: 24px;">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-    </header>
+</header>
 
 
 
@@ -190,7 +190,7 @@
                             <img src="img/mail-wh.svg" alt="E-Mail Icon" class="w-5 h-7">
                         </a>
                         -->
-                        <a class="font-moret text-2xl" href="https://www.linkedin.com/in/michelle-sommer-a349651a9/">
+                        <a class="font-moret text-2xl" href="https://www.linkedin.com/in/michelle-sommer-a349651a9/" target="_blank">
                             <p>LINKEDIN</p>
                         </a>
                     </div>
