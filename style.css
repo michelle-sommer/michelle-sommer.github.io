@@ -90,6 +90,28 @@
 }
 
 
+
+#slide1fly:checked ~ #controls label:nth-child(2),
+#slide2fly:checked ~ #controls label:nth-child(3),
+#slide3fly:checked ~ #controls label:nth-child(4),
+#slide4fly:checked ~ #controls label:nth-child(1) {
+  background: url(img/arrow-wide-right.svg) no-repeat;
+  float:right;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+#slide1fly:checked ~ #controls label:nth-last-child(2),
+#slide2fly:checked ~ #controls label:nth-last-child(3),
+#slide3fly:checked ~ #controls label:nth-last-child(4),
+#slide4fly:checked ~ #controls label:nth-last-child(1) {
+  background: url(img/arrow-wide-left.svg) no-repeat;
+  float:left;
+  margin: 0 0 0 10px;
+  display: block;
+}
+
+
 #slide1fly:checked ~ #bullets label:nth-child(1),
 #slide2fly:checked ~ #bullets label:nth-child(2),
 #slide3fly:checked ~ #bullets label:nth-child(3),
@@ -97,19 +119,8 @@
   background: #444;
 }
 
-@media screen and (max-width: 900px) {
-  #slide1fly:checked ~ #controls label:nth-child(2),
-  #slide2fly:checked ~ #controls label:nth-child(3),
-  #slide3fly:checked ~ #controls label:nth-child(4),
-  #slide4fly:checked ~ #controls label:nth-child(1),
-  #slide1fly:checked ~ #controls label:nth-last-child(2),
-  #slide2fly:checked ~ #controls label:nth-last-child(3),
-  #slide3fly:checked ~ #controls label:nth-last-child(4),
-  #slide4fly:checked ~ #controls label:nth-last-child(1) {
-     margin: 0;
-  }
-}
 /* Walpair Ende */
+
 /* Hochzeit Start */
 #slide1hochzeit:checked ~ #slides .inner {
   margin-left: 0;
@@ -153,6 +164,26 @@
   border-radius: 0.5rem;
 }
 
+#slide1hochzeit:checked ~ #controls label:nth-child(2),
+#slide2hochzeit:checked ~ #controls label:nth-child(3),
+#slide3hochzeit:checked ~ #controls label:nth-child(4),
+#slide4hochzeit:checked ~ #controls label:nth-child(1) {
+  background: url(img/arrow-wide-right.svg) no-repeat;
+  float:right;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+#slide1hochzeit:checked ~ #controls label:nth-last-child(2),
+#slide2hochzeit:checked ~ #controls label:nth-last-child(3),
+#slide3hochzeit:checked ~ #controls label:nth-last-child(4),
+#slide4hochzeit:checked ~ #controls label:nth-last-child(1) {
+  background: url(img/arrow-wide-left.svg) no-repeat;
+  float:left;
+  margin: 0 0 0 10px;
+  display: block;
+}
+
 #slide1hochzeit:checked ~ #bullets label:nth-child(1),
 #slide2hochzeit:checked ~ #bullets label:nth-child(2),
 #slide3hochzeit:checked ~ #bullets label:nth-child(3),
@@ -160,19 +191,9 @@
   background: #444;
 }
 
-@media screen and (max-width: 900px) {
-  #slide1hochzeit:checked ~ #controls label:nth-child(2),
-  #slide2hochzeit:checked ~ #controls label:nth-child(3),
-  #slide3hochzeit:checked ~ #controls label:nth-child(4),
-  #slide4hochzeit:checked ~ #controls label:nth-child(1),
-  #slide1hochzeit:checked ~ #controls label:nth-last-child(2),
-  #slide2hochzeit:checked ~ #controls label:nth-last-child(3),
-  #slide3hochzeit:checked ~ #controls label:nth-last-child(4),
-  #slide4hochzeit:checked ~ #controls label:nth-last-child(1) {
-     margin: 0;
-  }
-}
+
 /* Hochzeit Ende */
+
 /* Weihnachten Einladung Start */
 #slides .slide_1 {
   background-image: url("img/postkarten.png");
@@ -204,7 +225,7 @@
 }
 /* Weihnachten Einladung Ende */
 #controls {
-  margin: -180px 0 0 0;
+  margin: -280px 0 0 0;
   width: 100%;
   height: 50px;
   z-index: 3;
@@ -213,16 +234,44 @@
 #controls label {
   transition: opacity 0.2s ease-out;
   display: none;
-  width: 50px;
-  height: 50px;
-  opacity: .4;
+  width: 46px;
+  height: 79px;
+  opacity: 1;
 }
 #controls label:hover {
   opacity: 1;
 }
 
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+  background: url(img/arrow-wide-right.svg) no-repeat;
+  float:right;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+  background: url(img/arrow-wide-left.svg) no-repeat;
+  float:left;
+  margin: 0 0 0 10px;
+  display: block;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+  background: #444;
+}
+
 #bullets {
-  margin: 150px 0 0;
+  margin: 250px 0 0;
   text-align: center;
 }
 #bullets label {
@@ -233,30 +282,8 @@
   background: #ccc;
   margin: 0 10px;
 }
-#slide1:checked ~ #bullets label:nth-child(1),
-#slide2:checked ~ #bullets label:nth-child(2),
-#slide3:checked ~ #bullets label:nth-child(3),
-#slide4:checked ~ #bullets label:nth-child(4) {
-  background: #444;
-}
-@media screen and (max-width: 900px) {
-  #slide1:checked ~ #controls label:nth-child(2),
-  #slide2:checked ~ #controls label:nth-child(3),
-  #slide3:checked ~ #controls label:nth-child(4),
-  #slide4:checked ~ #controls label:nth-child(1),
-  #slide1:checked ~ #controls label:nth-last-child(2),
-  #slide2:checked ~ #controls label:nth-last-child(3),
-  #slide3:checked ~ #controls label:nth-last-child(4),
-  #slide4:checked ~ #controls label:nth-last-child(1) {
-     margin: 0;
-  }
-  /*
-  #slides {
-     max-width: calc(100% - 140px);
-     margin: 0 auto;
-  }
-  */
-}
+
+
 
 @media screen and (max-width: 720px) {
   #slides {
@@ -266,6 +293,14 @@
   #slides .slide {
     height: 300px;
     max-width: 100%;
+  }
+
+  #controls {
+    margin: -185px 0 0 0;
+  }
+
+  #bullets {
+    margin: 150px 0 0;
   }
 }
 
@@ -278,6 +313,14 @@
     height: 250px;
     max-width: 100%;
   }
+
+  #controls {
+    margin: -160px 0 0 0;
+  }
+
+  #bullets {
+    margin: 120px 0 0;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -289,6 +332,14 @@
     height: 200px;
     max-width: 100%;
   }
+
+  #controls {
+    margin: -140px 0 0 0;
+  }
+
+  #bullets {
+    margin: 100px 0 0;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -299,4 +350,15 @@
 
 .button-wrapper {
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 390px) {
+
+  #controls {
+    margin: -135px 0 0 0;
+  }
+
+  #bullets {
+    margin: 100px 0 0;
+  }
 }
