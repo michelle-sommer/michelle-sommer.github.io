@@ -46,80 +46,221 @@
   height: 100%;
   color: #fff;
 }
-/* Walpair Start */
-#slide1fly:checked ~ #slides .inner {
+
+/* Elektro kaufmann Website Start */
+#slide1elektro:checked ~ #slides .inner {
   margin-left: 0;
 }
-#slide2fly:checked ~ #slides .inner {
+#slide2elektro:checked ~ #slides .inner {
   margin-left: -100%;
 }
-#slide3fly:checked ~ #slides .inner {
+#slide3elektro:checked ~ #slides .inner {
   margin-left: -200%;
 }
-#slide4fly:checked ~ #slides .inner {
-  margin-left: -300%;
-}
 
-#slides .slide_1_fly {
-  background-image: url("img/boardmagazin-4.png");
+#slides .slide_1_elektro {
+  background-image: url("img/Elektro-Kaufmann-Desktop_Mobil.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
 }
-#slides .slide_2_fly {
-  background-image: url("img/board-3.png");
+#slides .slide_2_elektro {
+  background-image: url("img/Elektro-Kaufmann-Mobil.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
 }
-#slides .slide_3_fly {
-  background-image: url("img/boardmagazin-1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.5rem;
-}
-#slides .slide_4_fly {
-  background-image: url("img/board-2.png");
+#slides .slide_3_elektro {
+  background-image: url("img/Elektro-Kaufmann-Mockup.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
 }
 
-
-
-#slide1fly:checked ~ #controls label:nth-child(2),
-#slide2fly:checked ~ #controls label:nth-child(3),
-#slide3fly:checked ~ #controls label:nth-child(4),
-#slide4fly:checked ~ #controls label:nth-child(1) {
+#slide1elektro:checked ~ #controls label:nth-child(2),
+#slide2elektro:checked ~ #controls label:nth-child(3),
+#slide3elektro:checked ~ #controls label:nth-child(1) {
   background: url(img/arrow-wide-right.svg) no-repeat;
   float:right;
   margin: 0 10px 0 0;
   display: block;
 }
 
-#slide1fly:checked ~ #controls label:nth-last-child(2),
-#slide2fly:checked ~ #controls label:nth-last-child(3),
-#slide3fly:checked ~ #controls label:nth-last-child(4),
-#slide4fly:checked ~ #controls label:nth-last-child(1) {
+#slide1elektro:checked ~ #controls label:nth-last-child(1),
+#slide2elektro:checked ~ #controls label:nth-last-child(3),
+#slide3elektro:checked ~ #controls label:nth-last-child(2){
   background: url(img/arrow-wide-left.svg) no-repeat;
   float:left;
   margin: 0 0 0 10px;
   display: block;
 }
 
+#slide1elektro:checked ~ #bullets label:nth-child(1),
+#slide2elektro:checked ~ #bullets label:nth-child(2),
+#slide3elektro:checked ~ #bullets label:nth-child(3){
+  background: #444;
+}
+/* Elektro kaufmann Website Ende */
 
-#slide1fly:checked ~ #bullets label:nth-child(1),
-#slide2fly:checked ~ #bullets label:nth-child(2),
-#slide3fly:checked ~ #bullets label:nth-child(3),
-#slide4fly:checked ~ #bullets label:nth-child(4) {
+/* Social Media Start */
+#slide1social1:checked ~ #slides .inner {
+  margin-left: 0;
+}
+#slide2social1:checked ~ #slides .inner {
+  margin-left: -100%;
+}
+#slide3social1:checked ~ #slides .inner {
+  margin-left: -200%;
+}
+
+#slides .slide_1_social1 {
+  background-image: url("img/Ilir-rechnet-das_Instagram_Video_Ansicht.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#slides .slide_2_social1 {
+  background-image: url("img/Ilir-rechnet-das-YT.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#slides .slide_3_social1 {
+  background-image: url("img/Ilir-rechnet-das_Insta-Carousel.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+
+#slide1social1:checked ~ #controls label:nth-child(2),
+#slide2social1:checked ~ #controls label:nth-child(3),
+#slide3social1:checked ~ #controls label:nth-child(1) {
+  background: url(img/arrow-wide-right.svg) no-repeat;
+  float:right;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+#slide1social1:checked ~ #controls label:nth-last-child(1),
+#slide2social1:checked ~ #controls label:nth-last-child(3),
+#slide3social1:checked ~ #controls label:nth-last-child(2) {
+  background: url(img/arrow-wide-left.svg) no-repeat;
+  float:left;
+  margin: 0 0 0 10px;
+  display: block;
+}
+
+#slide1social1:checked ~ #bullets label:nth-child(1),
+#slide2social1:checked ~ #bullets label:nth-child(2),
+#slide3social1:checked ~ #bullets label:nth-child(3){
   background: #444;
 }
 
-/* Walpair Ende */
+/* Social Media Ende */
+
+
+
+/* Deiss Start */
+#slide1deiss:checked ~ #slides .inner {
+  margin-left: 0;
+}
+#slide2deiss:checked ~ #slides .inner {
+  margin-left: -100%;
+}
+#slide3deiss:checked ~ #slides .inner {
+  margin-left: -200%;
+}
+#slide4deiss:checked ~ #slides .inner {
+  margin-left: -300%;
+}
+#slide5deiss:checked ~ #slides .inner {
+  margin-left: -400%;
+}
+
+#slide1deiss ~ #slides .inner {
+  width: 500%;
+}
+
+#slide1deiss ~ #slides .slide {
+  width: 20%;
+}
+
+#slides .slide_1_deiss {
+  background-image: url("img/Deiss-Desktop_Mobil.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#slides .slide_2_deiss {
+  background-image: url("img/Deiss-Mobil-Screens.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#slides .slide_3_deiss {
+  background-image: url("img/Deiss-Mockup-Branchen.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+#slides .slide_4_deiss {
+  background-image: url("img/Deiss-Mockup-Marken.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+
+#slides .slide_5_deiss {
+  background-image: url("img/Deiss-Mockup-Menu-active.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.5rem;
+}
+
+#slide1deiss:checked ~ #controls label:nth-child(2),
+#slide2deiss:checked ~ #controls label:nth-child(3),
+#slide3deiss:checked ~ #controls label:nth-child(4),
+#slide4deiss:checked ~ #controls label:nth-child(5),
+#slide5deiss:checked ~ #controls label:nth-child(1) {
+  background: url(img/arrow-wide-right.svg) no-repeat;
+  float:right;
+  margin: 0 10px 0 0;
+  display: block;
+}
+
+#slide1deiss:checked ~ #controls label:nth-last-child(1),
+#slide2deiss:checked ~ #controls label:nth-last-child(5),
+#slide3deiss:checked ~ #controls label:nth-last-child(4),
+#slide4deiss:checked ~ #controls label:nth-last-child(3),
+#slide5deiss:checked ~ #controls label:nth-last-child(2) {
+  background: url(img/arrow-wide-left.svg) no-repeat;
+  float:left;
+  margin: 0 0 0 10px;
+  display: block;
+}
+
+#slide1deiss:checked ~ #bullets label:nth-child(1),
+#slide2deiss:checked ~ #bullets label:nth-child(2),
+#slide3deiss:checked ~ #bullets label:nth-child(3),
+#slide4deiss:checked ~ #bullets label:nth-child(4),
+#slide5deiss:checked ~ #bullets label:nth-child(5) {
+  background: #444;
+}
+
+
+/* Deiss Ende */
+
 
 /* Hochzeit Start */
 #slide1hochzeit:checked ~ #slides .inner {
@@ -194,36 +335,7 @@
 
 /* Hochzeit Ende */
 
-/* Weihnachten Einladung Start */
-#slides .slide_1 {
-  background-image: url("img/postkarten.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.5rem;
-}
-#slides .slide_2 {
-  background-image: url("img/Postkarten-doppel-rot.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.5rem;
-}
-#slides .slide_3 {
-  background-image: url("img/Postkarten-rot.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.5rem;
-}
-#slides .slide_4 {
-  background-image: url("img/Postkarten-doppel-beige.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.5rem;
-}
-/* Weihnachten Einladung Ende */
+
 #controls {
   margin: -280px 0 0 0;
   width: 100%;
@@ -282,7 +394,6 @@
   background: #ccc;
   margin: 0 10px;
 }
-
 
 
 @media screen and (max-width: 720px) {
@@ -362,3 +473,187 @@
     margin: 100px 0 0;
   }
 }
+
+/* Neues CSS */
+
+.hero .column-left {
+  width: 30%;
+}
+
+.hero .column-right {
+  width: 70%;
+}
+
+#portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.button-orientierung {
+  flex-direction: row;
+}
+
+.flex-direction {
+  flex-direction: row;
+}
+
+h5 {
+  font-size: 27px;
+}
+.text-projekt-wrapper {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-wrapper, .beschreibung-wrapper, .kernaufgaben-wrapper {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beschreibung-wrapper {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.text-projekt-wrapper-right {
+  padding-left: 24px;
+}
+
+.text-projekt-wrapper-right .beschreibung-wrapper {
+  width: 100%;
+}
+
+.mt-8 {
+  margin-top: 32px;
+}
+
+.kernaufgaben-wrapper ul {
+  padding-left: 16px;
+}
+
+#projekte {
+  margin-top: 32px!important;
+}
+
+.education-wrapper {
+  padding-top: 60px;
+}
+
+.rounded-edge .about-text-wrapper {
+  padding-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+    .rounded-edge .content {
+      margin: 140px auto 0 auto;
+    }   
+  
+
+  .education-wrapper {
+    padding-top: 60px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .rounded-edge .content .inner-content {
+    text-align: center;
+  }
+
+  .rounded-edge .content .about-text-wrapper .button-wrapper {
+    justify-content: center;
+  }
+
+  .rounded-edge .content .about-text-wrapper {
+    margin: 0 auto 0 auto;
+  }
+
+  .text-projekt-wrapper-right {
+    padding-left: 0px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+  .rounded-edge {
+    height: 64vh;
+  }
+
+  
+}
+
+@media (min-width: 640px) {
+ .rounded-edge {
+height: 80vh;
+}
+
+.rounded-edge .content .inner-content {
+  padding-top: 8rem;
+}
+
+  .education-wrapper {
+  padding-top: 70px;
+  }
+
+  .education-wrapper #bildung ul li {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .pt-x {
+    padding-top: 8rem;
+    }
+
+}
+
+@media (max-width: 640px) {
+  .rounded-edge {
+    height: 80vh;
+    }
+
+    .button-orientierung {
+      flex-direction: column;
+      }
+
+    #hero-vorstellung h1 {
+      font-size: 8rem;
+      line-height: 6rem;
+    }
+
+    .pt-x {
+      padding-top: 8rem;
+      }
+}
+
+@media (max-width: 445px) {
+  .flex-direction {
+    flex-direction: column;
+  }
+
+  .gap-mobile {
+    column-gap: 16px;
+  }
+
+  #hero-vorstellung h1 {
+    font-size: 7rem;
+    line-height: 5rem;
+  }
+
+  
+}
+
+@media (max-width: 400px) {
+
+  #hero-vorstellung h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+}
+
+
+/**/
